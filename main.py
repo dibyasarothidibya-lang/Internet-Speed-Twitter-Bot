@@ -10,10 +10,14 @@ from selenium.webdriver.support import expected_conditions as EC
 
 load_dotenv()
 
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_experimental_option("detach", True)
+
 PROMISED_DOWN = float(os.environ.get("PROMISED_DOWN", 150))
 PROMISED_UP = float(os.environ.get("PROMISED_UP", 10))
 Email = os.environ.get("TWITTER_EMAIL", "")
 Password = os.environ.get("TWITTER_PASSWORD", "")
+
 
 # driver.get("https://app.100daysofpython.dev/services/y")
 # #Logging in Google
